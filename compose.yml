@@ -1,0 +1,153 @@
+volumes:
+  data:
+  backups:
+---
+services:
+  ##### Filebrowser #####
+  filebrowser:
+    image: filebrowser/filebrowser
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - data:/srv
+
+  ##### Backup #####
+  backups:
+    image: itzg/mc-backup
+    depends_on:
+      mc:
+        condition: service_healthy
+    volumes:
+      - data:/data:ro
+      - backups:/backups
+    environment:
+      BACKUP_INTERVAL: 24h
+      PRUNE_BACKUPS_COUNT: 7
+      SRC_DIR: /data
+      DEST_DIR: /backups
+      RCON_HOST: mc
+      INITIAL_DELAY: 0
+
+  ##### Minecraft Server #####
+  mc:
+    image: itzg/minecraft-server
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - 25565:25565
+      - 24454:24454/udp
+    volumes:
+      - data:/data
+    environment:
+      EULA: true
+      # General
+      INIT_MEMORY: 8G
+      MAX_MEMORY: 16G
+      USE_AIKAR_FLAGS: true
+      SNOOPER_ENABLED: false
+
+      # Server
+      SERVER_NAME: Kanaloa MC
+      MOTD: §l§sKanaloa MC
+      ICON: https://raw.githubusercontent.com/petitbonney/kanaloa-mc/refs/heads/master/assets/icon.png
+      TYPE: FABRIC
+      VERSION: 1.20.1
+      MODE: survival
+      DIFFICULTY: hard
+      FORCE_GAMEMODE: true
+      SPAWN_PROTECTION: 0
+      VIEW_DISTANCE: 16
+      PLAYER_IDLE_TIMEOUT: 10 # minutes
+      MAX_TICK_TIME: -1
+
+      # Whitelist
+      ENABLE_WHITELIST: true
+      WHITELIST: petitbonney
+
+      # Auto OP
+      OPS: petitbonney
+
+      # Auto-Pause
+      ENABLE_AUTOPAUSE: true
+      AUTOPAUSE_TIMEOUT_EST: 600 # seconds
+
+      # Mods
+      MODRINTH_DOWNLOAD_DEPENDENCIES: required
+      MODRINTH_ALLOWED_VERSION_TYPE: alpha
+      MODRINTH_PROJECTS: |
+        appleskin
+        athena-ctm
+        automodpack
+        balm
+        better-stats
+        bodies-bodies
+        c2me-fabric
+        camerapture
+        cardinal-components-api
+        carry-on
+        chat-coords
+        chefs-delight
+        chipped
+        cloth-config
+        cloud-boots
+        creeper-overhaul
+        ct-overhaul-village
+        ctov-friends-and-foes-compat
+        deeperdarker
+        dungeons+
+        durability-tooltip
+        enderman-overhaul
+        emotecraft
+        explorify
+        fabric-api
+        farmers-delight-refabricated
+        ferrite-core
+        friends-and-foes
+        geckolib
+        inventory-sorting
+        jade
+        jei
+        krypton
+        lazydfu
+        lithium
+        lithostitched
+        lmd
+        memoryleakfix
+        mining-helmet-fabric
+        modernfix
+        more-mobs
+        more-mob-variants
+        naturalist
+        noisium
+        owo-lib
+        remove-terralith-intro-message
+        resourceful-lib
+        serversleep
+        show-me-your-skin
+        simple-voice-chat
+        spark
+        spawn-animations
+        tcdcommons
+        terrablender
+        terralith
+        too-fast
+        tree-harvester
+        travelersbackpack
+        warrior-rage
+        waystones
+        when-dungeons-arise-seven-seas
+        yungs-api
+        yungs-better-desert-temples
+        yungs-better-dungeons
+        yungs-better-end-island
+        yungs-better-jungle-temples
+        yungs-better-mineshafts
+        yungs-better-nether-fortresses
+        yungs-better-ocean-monuments
+        yungs-better-strongholds
+        yungs-better-witch-huts
+        yungs-bridges
+        yungs-cave-biomes
+        yungs-extras
