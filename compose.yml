@@ -71,13 +71,12 @@ services:
         chipped
         cloth-config
         ct-overhaul-village
-        ctov-farmers-delight-compat
         ctov-friends-and-foes-compat
         deeperdarker
         emotecraft
         explorify
         fabric-api
-        farmers-delight-fabric
+        farmers-delight-refabricated
         ferrite-core
         friends-and-foes
         from-the-fog
