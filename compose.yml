@@ -32,6 +32,7 @@ services:
 
       # Server
       SERVER_NAME: Kanaloa MC
+      MOTD: §l§sKanaloa MC
       ICON: https://raw.githubusercontent.com/petitbonney/kanaloa-mc/refs/heads/master/assets/icon.png
       TYPE: FABRIC
       VERSION: 1.20.1
@@ -46,6 +47,9 @@ services:
       # Whitelist
       ENABLE_WHITELIST: true
       WHITELIST: petitbonney
+
+      # Auto OP
+      OPS: petitbonney
 
       # Auto-Pause
       ENABLE_AUTOPAUSE: true
