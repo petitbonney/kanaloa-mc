@@ -61,20 +61,25 @@ services:
         balm
         better-stats
         c2me-fabric
+        camerapture
         cardinal-components-api
         carry-on
         chipped
         cloth-config
         ct-overhaul-village
+        ctov-farmers-delight-compat
         ctov-friends-and-foes-compat
         deeperdarker
+        emotecraft
         explorify
         fabric-api
+        farmers-delight-fabric
         ferrite-core
         friends-and-foes
         from-the-fog
         geckolib
         jade
+        jei
         krypton
         lithium
         lithostitched
@@ -95,6 +100,7 @@ services:
         terrablender
         terralith
         too-fast
+        tree-harvester
         travelersbackpack
         waystones
         yungs-api
