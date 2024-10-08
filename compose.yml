@@ -1,0 +1,106 @@
+volumes:
+  data:
+
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - data:/srv
+  mc:
+    image: itzg/minecraft-server
+    restart: always
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "24454:24454/udp"
+    volumes:
+      - data:/data
+    environment:
+      EULA: true
+      # General
+      INIT_MEMORY: 8G
+      MAX_MEMORY: 16G
+      USE_AIKAR_FLAGS: true
+      # Server
+      SERVER_NAME: "Kanaloa MC"
+      TYPE: FABRIC
+      VERSION: "1.20.1"
+      DIFFICULTY: hard
+      ICON: https://gist.githubusercontent.com/petitbonney/c325cf3291ee796e36ada6bb5d0ffe09/raw/5f68b03c51d45abc4bf7ced8c00ae3f07ccbbebf/kanaloa_icon.png
+      OVERRIDE_ICON: true
+      MAX_PLAYERS: 20
+      FORCE_GAMEMODE: true
+      HARDCORE: false
+      SNOOPER_ENABLED: false
+      SPAWN_PROTECTION: 0
+      SEED: 3695880452732569979
+      MODE: survival
+      PLAYER_IDLE_TIMEOUT: 10 # minutes
+      # Whitelist
+      ENABLE_WHITELIST: true
+      WHITELIST: petitbonney
+      # Auto-Pause
+      ENABLE_AUTOPAUSE: true
+      AUTOPAUSE_TIMEOUT_EST: 600 # seconds
+
+      # Mods
+      MODRINTH_PROJECTS: |
+        appleskin:xcauwnEB
+        athena-ctm:mXJWSwbJ
+        automodpack:W02r9rXv
+        balm:5sowswPx
+        better-stats:Ktw36uDC
+        c2me-fabric:LRL5QAZY
+        cardinal-components-api:qW85eawp
+        carry-on:Mkla4B3q
+        chipped:Fy1PKYtc
+        cloth-config:2xQdCMyG
+        ct-overhaul-village:CGCwEJfv
+        ctov-friends-and-foes-compat:BbKorFuj
+        deeperdarker:JcDkzJzw
+        explorify:yRSH0sWM
+        fabric-api:P7uGFii0
+        ferrite-core:unerR5MN
+        friends-and-foes:ZSr2YsBe
+        from-the-fog:JTd3TFcc
+        geckolib:9VG3hx3F
+        jade:Lvyx1o7I
+        krypton:jiDwS0W1
+        lithium:ZSNsJrPI
+        lithostitched:B6E4jva8
+        lmd:AqczUIGA
+        memoryleakfix:5xvCCRjJ
+        modernfix:JJHLp7Pu
+        more-mobs:1RMi2zHD
+        naturalist:dMGBsRgz
+        noisium:erSJnRcq
+        owo-lib:zyOBB7J4
+        remove-terralith-intro-message:Ad77N3iX
+        resourceful-lib:UOdaYbhh
+        serversleep:jFozv05n
+        simple-voice-chat:UeYlDM34
+        spark:XGW2fviP
+        spawn-animations:pQ0HEnlC
+        tcdcommons:Gob4d0A8
+        terrablender:FZV63yhg
+        terralith:WeYhEb5d
+        too-fast:ZyY2Xraw
+        travelersbackpack:554ySzkW
+        waystones:gazaC8Cz
+        yungs-api:lscV1N5k
+        yungs-better-desert-temples:1Z9HNWpj
+        yungs-better-dungeons:nidyvq2m
+        yungs-better-end-island:qJTsmyiE
+        yungs-better-jungle-temples:6LPrzuB0
+        yungs-better-mineshafts:qLnQnqXS
+        yungs-better-nether-fortresses:FL88RLRu
+        yungs-better-ocean-monuments:4c00pjbt
+        yungs-better-strongholds:yV6hn0bB
+        yungs-better-witch-huts:lYpHN3iF
+        yungs-bridges:hvfjXu8d
+        yungs-cave-biomes:FyOxLDbe
+        yungs-extras:pfVTUz1L
