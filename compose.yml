@@ -39,7 +39,6 @@ services:
       MODE: survival
       DIFFICULTY: hard
       FORCE_GAMEMODE: true
-      SEED: 3695880452732570000
       SPAWN_PROTECTION: 0
       VIEW_DISTANCE: 16
       PLAYER_IDLE_TIMEOUT: 10 # minutes
