@@ -70,9 +70,11 @@ services:
         carry-on
         chipped
         cloth-config
+        cloud-boots
         ct-overhaul-village
         ctov-friends-and-foes-compat
         deeperdarker
+        durability-tooltip
         emotecraft
         explorify
         fabric-api
@@ -84,10 +86,12 @@ services:
         jade
         jei
         krypton
+        lazydfu
         lithium
         lithostitched
         lmd
         memoryleakfix
+        mining-helmet-fabric
         modernfix
         more-mobs
         naturalist
@@ -96,6 +100,7 @@ services:
         remove-terralith-intro-message
         resourceful-lib
         serversleep
+        show-me-your-skin
         simple-voice-chat
         spark
         spawn-animations
@@ -105,6 +110,7 @@ services:
         too-fast
         tree-harvester
         travelersbackpack
+        warrior-rage
         waystones
         yungs-api
         yungs-better-desert-temples
