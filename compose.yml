@@ -1,5 +1,6 @@
 volumes:
   data:
+  backups:
 ---
 services:
   ##### Filebrowser #####
@@ -10,6 +11,23 @@ services:
       - 8080:80
     volumes:
       - data:/srv
+
+  ##### Backup #####
+  backups:
+    image: itzg/mc-backup
+    depends_on:
+      mc:
+        condition: service_healthy
+    volumes:
+      - data:/data:ro
+      - backups:/backups
+    environment:
+      BACKUP_INTERVAL: 24h
+      PRUNE_BACKUPS_COUNT: 7
+      SRC_DIR: /data
+      DEST_DIR: /backups
+      RCON_HOST: mc
+      INITIAL_DELAY: 0
 
   ##### Minecraft Server #####
   mc:
