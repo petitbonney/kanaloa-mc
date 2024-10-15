@@ -81,6 +81,7 @@ services:
         automodpack
         balm
         better-stats
+        bodies-bodies
         c2me-fabric
         camerapture
         cardinal-components-api
