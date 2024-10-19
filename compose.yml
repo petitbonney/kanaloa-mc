@@ -86,21 +86,26 @@ services:
         camerapture
         cardinal-components-api
         carry-on
+        chat-coords
+        chefs-delight
         chipped
         cloth-config
         cloud-boots
+        creeper-overhaul
         ct-overhaul-village
         ctov-friends-and-foes-compat
         deeperdarker
+        dungeons+
         durability-tooltip
+        enderman-overhaul
         emotecraft
         explorify
         fabric-api
         farmers-delight-refabricated
         ferrite-core
         friends-and-foes
-        from-the-fog
         geckolib
+        inventory-sorting
         jade
         jei
         krypton
@@ -112,6 +117,7 @@ services:
         mining-helmet-fabric
         modernfix
         more-mobs
+        more-mob-variants
         naturalist
         noisium
         owo-lib
@@ -130,6 +136,7 @@ services:
         travelersbackpack
         warrior-rage
         waystones
+        when-dungeons-arise-seven-seas
         yungs-api
         yungs-better-desert-temples
         yungs-better-dungeons
