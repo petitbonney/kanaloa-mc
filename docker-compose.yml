@@ -87,6 +87,7 @@ services:
 
       # Starting commands
       RCON_CMDS_STARTUP: |-
+        gamerule doInsomnia false
         gamerule doFireTick false
         gamerule mobGriefing false
         gamerule playersSleepingPercentage 25
