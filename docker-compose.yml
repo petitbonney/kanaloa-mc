@@ -149,6 +149,7 @@ services:
         too-fast
         travelers-backpack
         waystones
+        worldedit
         yungs-api-neoforge
         yungs-better-desert-temples-neoforge
         yungs-better-dungeons-neoforge
