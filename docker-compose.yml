@@ -103,6 +103,7 @@ services:
         balm
         c2me
         camera-mod
+        chipped
         choicetheorems-overhauled-village
         chunky-pregenerator-forge
         corpse
@@ -145,6 +146,7 @@ services:
         simple-voice-chat
         sophisticated-backpacks
         sophisticated-core
+        stitch
         terrablender-neoforge
         terralith
         too-fast
