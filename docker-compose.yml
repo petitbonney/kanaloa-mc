@@ -26,7 +26,7 @@ services:
       - backups:/backups
     environment:
       BACKUP_INTERVAL: 24h
-      PRUNE_BACKUPS_COUNT: 7
+      PRUNE_BACKUPS_COUNT: 3
       SRC_DIR: /data
       DEST_DIR: /backups
       RCON_HOST: mc
