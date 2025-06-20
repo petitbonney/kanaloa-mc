@@ -69,7 +69,7 @@ services:
       SEED: -2645619107171593610
       FORCE_GAMEMODE: true
       SPAWN_PROTECTION: 15
-      VIEW_DISTANCE: 32
+      VIEW_DISTANCE: 16
       PLAYER_IDLE_TIMEOUT: 10 # minutes
       MAX_TICK_TIME: -1
       ALLOW_NETHER: false
