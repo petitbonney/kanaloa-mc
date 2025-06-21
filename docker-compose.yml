@@ -72,7 +72,7 @@ services:
       VIEW_DISTANCE: 16
       PLAYER_IDLE_TIMEOUT: 10 # minutes
       MAX_TICK_TIME: -1
-      ALLOW_NETHER: false
+      ALLOW_NETHER: true
 
       # Whitelist
       ENABLE_WHITELIST: true
