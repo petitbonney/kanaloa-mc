@@ -134,6 +134,7 @@ services:
         macaws-roofs
         macaws-trapdoors
         macaws-windows
+        magnetic-enchantment
         modernfix
         noisium
         owo-lib
@@ -146,6 +147,7 @@ services:
         servercore
         simplehats
         simple-voice-chat
+        smelting-enchantment
         sophisticated-backpacks
         sophisticated-core
         stitch
@@ -154,6 +156,7 @@ services:
         too-fast
         travelers-backpack
         tschipcrafts-dynamic-lights-mod
+        veinminer-enchantment
         waystones
         worldedit
         yungs-api-neoforge
