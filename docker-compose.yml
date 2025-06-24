@@ -120,6 +120,7 @@ services:
         geckolib
         golem-overhaul
         guideme
+        hidden-names
         jei
         leaves-be-gone
         lithium
