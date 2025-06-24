@@ -89,7 +89,6 @@ services:
       RCON_CMDS_STARTUP: |-
         gamerule doInsomnia false
         gamerule doFireTick false
-        gamerule mobGriefing false
         gamerule playersSleepingPercentage 25
 
       # Mods
@@ -119,6 +118,7 @@ services:
         framework
         geckolib
         golem-overhaul
+        granular-mob-griefing
         guideme
         hidden-names
         jei
