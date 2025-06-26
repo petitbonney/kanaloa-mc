@@ -25,12 +25,10 @@ services:
       - data:/data:ro
       - backups:/backups
     environment:
-      BACKUP_INTERVAL: 24h
-      PRUNE_BACKUPS_COUNT: 3
+      PRUNE_BACKUPS_DAYS: 3
       SRC_DIR: /data
       DEST_DIR: /backups
       RCON_HOST: mc
-      INITIAL_DELAY: 0
 
   ##### Minecraft Server #####
   mc:
