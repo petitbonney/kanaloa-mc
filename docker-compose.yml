@@ -71,6 +71,7 @@ services:
       PLAYER_IDLE_TIMEOUT: 10 # minutes
       MAX_TICK_TIME: -1
       ALLOW_NETHER: true
+      ALLOW_FLIGHT: true # necessary for create's jetpack
 
       # Whitelist
       ENABLE_WHITELIST: true
