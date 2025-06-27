@@ -98,6 +98,7 @@ services:
         ai-improvements
         applied-energistics-2
         applied-energistics-2-wireless-terminals
+        athena
         automodpack
         balm
         c2me
@@ -150,7 +151,6 @@ services:
         smelting-enchantment
         sophisticated-backpacks
         sophisticated-core
-        stitch
         terrablender-neoforge
         terralith
         too-fast
