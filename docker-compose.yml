@@ -82,7 +82,13 @@ services:
 
       # Auto-Pause
       ENABLE_AUTOPAUSE: true
-      AUTOPAUSE_TIMEOUT_EST: 600 # seconds
+      AUTOPAUSE_TIMEOUT_EST: 120 # seconds
+      RCON_CMDS_FIRST_CONNECT: |-
+        save-on
+        save-all flush
+      RCON_CMDS_LAST_DISCONNECT: |-
+        save-all flush
+        save-off
 
       # Starting commands
       RCON_CMDS_STARTUP: |-
