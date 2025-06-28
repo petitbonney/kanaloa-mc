@@ -95,6 +95,7 @@ services:
       CURSEFORGE_FILES: |-
         accessories
         ae2-jei-integration
+        aeinfinitybooster
         ai-improvements
         applied-energistics-2
         applied-energistics-2-wireless-terminals
