@@ -121,6 +121,7 @@ services:
         easy-npc@5.9.0
         enderman-overhaul
         ferritecore
+        fishing-bobber-detector
         framedblocks
         framework
         geckolib
