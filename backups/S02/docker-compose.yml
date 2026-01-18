@@ -1,0 +1,180 @@
+##### VOLUMES #####
+volumes:
+  data:
+  backups:
+
+
+##### SERVICES #####
+services:
+  ##### Filebrowser #####
+  filebrowser:
+    image: filebrowser/filebrowser
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - data:/srv
+
+  ##### Backup #####
+  backups:
+    image: itzg/mc-backup
+    depends_on:
+      mc:
+        condition: service_healthy
+    volumes:
+      - data:/data:ro
+      - backups:/backups
+    environment:
+      PRUNE_BACKUPS_DAYS: 3
+      SRC_DIR: /data
+      DEST_DIR: /backups
+      RCON_HOST: mc
+
+  ##### Minecraft Server #####
+  mc:
+    image: itzg/minecraft-server
+    restart: always
+    tty: true
+    stdin_open: true
+    cap_add:
+      - CAP_NET_RAW
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    ports:
+      - 25565:25565
+      - 24454:24454/udp
+    volumes:
+      - data:/data
+    environment:
+      EULA: true
+
+      # General
+      INIT_MEMORY: 8G
+      MAX_MEMORY: 16G
+      USE_AIKAR_FLAGS: true
+      SNOOPER_ENABLED: false
+
+      # Server
+      SERVER_NAME: Kanaloa MC
+      MOTD: §l§sKanaloa MC
+      ICON: https://raw.githubusercontent.com/petitbonney/kanaloa-mc/refs/heads/master/assets/icon.png
+      TYPE: NEOFORGE
+      VERSION: 1.21.1
+      NEOFORGE_VERSION: latest
+      MODE: survival
+      DIFFICULTY: hard
+      SEED: -2645619107171593610
+      FORCE_GAMEMODE: true
+      SPAWN_PROTECTION: 15
+      VIEW_DISTANCE: 16
+      PLAYER_IDLE_TIMEOUT: 10 # minutes
+      MAX_TICK_TIME: -1
+      ALLOW_NETHER: true
+      ALLOW_FLIGHT: true # necessary for create's jetpack
+
+      # Whitelist
+      ENABLE_WHITELIST: true
+      WHITELIST: petitbonney
+
+      # Auto OP
+      OPS: petitbonney
+
+      # Auto-Pause
+      ENABLE_AUTOPAUSE: true
+      AUTOPAUSE_TIMEOUT_EST: 120 # seconds
+      RCON_CMDS_FIRST_CONNECT: |-
+        save-on
+        save-all flush
+      RCON_CMDS_LAST_DISCONNECT: |-
+        save-all flush
+        save-off
+
+      # Starting commands
+      RCON_CMDS_STARTUP: |-
+        gamerule doInsomnia false
+        gamerule doFireTick false
+        gamerule playersSleepingPercentage 25
+
+      # Mods
+      CF_API_KEY: ${CF_API_KEY}
+      CURSEFORGE_FILES: |-
+        accessories
+        ae2-jei-integration
+        aeinfinitybooster
+        ai-improvements
+        applied-energistics-2
+        applied-energistics-2-wireless-terminals
+        athena
+        automodpack
+        balm
+        c2me
+        camera-mod
+        chipped
+        choicetheorems-overhauled-village
+        chunky-pregenerator-forge
+        corpse
+        create
+        createaddition
+        create-stuff-additions
+        creeper-overhaul
+        easy-npc@5.9.0
+        enderman-overhaul
+        ferritecore
+        fishing-bobber-detector
+        framedblocks
+        framework
+        geckolib
+        golem-overhaul
+        granular-mob-griefing
+        guideme
+        hidden-names
+        jei
+        leaves-be-gone
+        lithium
+        lithostitched
+        lootr
+        macaws-bridges
+        macaws-doors
+        macaws-fences-and-walls
+        macaws-furniture
+        macaws-lights-and-lamps
+        macaws-paths-and-pavings
+        macaws-roofs
+        macaws-trapdoors
+        macaws-windows
+        magnetic-enchantment
+        modernfix
+        noisium
+        owo-lib
+        polymorph
+        puzzles-lib
+        refurbished-furniture
+        resourceful-config
+        resourceful-lib
+        security-craft
+        servercore
+        simplehats
+        simple-voice-chat
+        smelting-enchantment
+        sophisticated-backpacks
+        sophisticated-core
+        terrablender-neoforge
+        terralith
+        too-fast
+        travelers-backpack
+        veinminer-enchantment
+        waystones
+        worldedit
+        yungs-api-neoforge
+        yungs-better-desert-temples-neoforge
+        yungs-better-dungeons-neoforge
+        yungs-better-end-island-neoforge
+        yungs-better-jungle-temples-neoforge
+        yungs-better-mineshafts-neoforge
+        yungs-better-nether-fortresses-neoforge
+        yungs-better-ocean-monuments-neoforge
+        yungs-better-strongholds-neoforge
+        yungs-better-witch-huts-neoforge
+        yungs-bridges-neoforge
+        yungs-extras-neoforge
