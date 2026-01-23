@@ -51,9 +51,10 @@ services:
       # General
       INIT_MEMORY: 8G
       MAX_MEMORY: 16G
-      USE_AIKAR_FLAGS: true
+      USE_AIKAR_FLAGS: false
+      USE_MEOWICE_FLAGS: true
       SNOOPER_ENABLED: false
-      LOG_LEVEL: debug
+      LOG_LEVEL: info
 
       # Server
       SERVER_NAME: Kanaloa MC
@@ -67,9 +68,10 @@ services:
       SEED: -8322132593539361649
       FORCE_GAMEMODE: true
       SPAWN_PROTECTION: 0
-      VIEW_DISTANCE: 16
+      VIEW_DISTANCE: 10
+      SIMULATION_DISTANCE: 8
       PLAYER_IDLE_TIMEOUT: 10 # minutes
-      MAX_TICK_TIME: -1
+      MAX_TICK_TIME: 120000
       ALLOW_NETHER: true
       ALLOW_FLIGHT: true
 
@@ -103,6 +105,7 @@ services:
         automodpack:4.0.5
         balm:21.0.56+fabric-1.21.1
         better-advancements:0.4.3.21
+        bobby:5.2.4+mc1.21
         chipped:4.0.2
         cit-resewn:1.2.2+1.21
         clientsort:2.1.6+1.21.1
@@ -117,10 +120,11 @@ services:
         cobblemon-playerxp:1.0.4+1.21.1
         cobblemon-pokenav:2.2.5
         cobblemon-size-variations:1.4.0
-        cobblemon-tim-core:1.7.1-fabric-1.28.1
+        cobblemon-tim-core:1.7.1-fabric-1.29.1
         cobblemon-unchained:1.7.1-fabric-1.7.1
         cobblemon:1.7.1
         collective:1.21.1-8.13-fabric+forge+neo
+        continuity:3.0.0+1.21
         controlling:19.0.5
         corgilib:1.21.1-5.0.0.7-Fabric
         data-anchor:2.0.0.13-fabric
@@ -144,18 +148,18 @@ services:
         polymorph:1.1.0+1.21.1
         puzzles-lib:v21.1.39-1.21.1-Fabric
         resourceful-lib:3.0.12
-        resourcify:1.7.5
+        resourcify:1.8.0
         searchables:1.0.2
         servercore:1.5.10+1.21.1
         simple-voice-chat:fabric-1.21.1-2.6.11
-        simplesethome:1.0
         simpletms-tms-and-trs-for-cobblemon:2.3.3
         sodium-extra:mc1.21.1-0.6.0+fabric
         sodium:mc1.21.1-0.6.13-fabric
         sophisticated-backpacks-(unoffical-fabric-port):1.21.1-3.23.4.3.106
         sophisticated-core-(unofficial-fabric-port):1.21.1-1.2.9.21.168
         sophisticated-storage-(unofficial-fabric-port):1.21.1-1.3.7.9.139
-        structurify:fabric-2.0.12+mc1.21.1
+        spark:1.10.109-fabric
+        terralith:2.5.8
         toms-storage:1.21-2.2.4-fabric
         tpa-utilities:1.2.0
         travelers-titles:1.21.1-Fabric-5.1.3
