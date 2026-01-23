@@ -71,7 +71,7 @@ services:
       VIEW_DISTANCE: 10
       SIMULATION_DISTANCE: 8
       PLAYER_IDLE_TIMEOUT: 10 # minutes
-      MAX_TICK_TIME: 120000
+      MAX_TICK_TIME: -1
       ALLOW_NETHER: true
       ALLOW_FLIGHT: true
 
