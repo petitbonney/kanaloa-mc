@@ -83,7 +83,7 @@ services:
       OPS: petitbonney
 
       # Auto-Pause
-      ENABLE_AUTOPAUSE: true
+      ENABLE_AUTOPAUSE: false # true
       AUTOPAUSE_TIMEOUT_EST: 120 # seconds
 
       # Starting commands
